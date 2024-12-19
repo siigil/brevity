@@ -1,9 +1,37 @@
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
     const editor = document.getElementById("editor");
-    const sidebar = document.createElement("div");
-    sidebar.id = "sidebar";
-    document.body.appendChild(sidebar);
+    let sidebar = document.getElementById("sidebar");
+
+    // Ensure sidebar is present
+    if (!sidebar) {
+        sidebar = document.createElement("div");
+        sidebar.id = "sidebar";
+        document.body.appendChild(sidebar);
+    }
+
+    // Ensure pasted text is plain
+    editor.addEventListener("paste", (event) => {
+        event.preventDefault();
+        const text = (event.clipboardData || window.clipboardData).getData("text/plain");
+        const selection = window.getSelection();
+        if (!selection.rangeCount) return;
+        selection.deleteFromDocument();
+        selection.getRangeAt(0).insertNode(document.createTextNode(text));
+    });
+
+    // Adjust editor size based on available space
+    const adjustEditorSize = () => {
+        const sidebarWidth = sidebar.getBoundingClientRect().width || 150;
+        const availableWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        const availableHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    
+        editor.style.width = availableWidth - sidebarWidth;
+        editor.style.height = availableHeight;
+    };
+
+    window.addEventListener("resize", adjustEditorSize);
+    adjustEditorSize(); // Initial adjustment
 
     // Create word and character count elements
     const wordCountElement = document.createElement("div");
@@ -25,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create theme switcher and add it to the bottom of the sidebar
     const themeSwitcher = document.createElement("select");
     themeSwitcher.id = "theme-switcher";
-    const themes = ["Default", "Dark"];
+    const themes = ["Default", "Dark", "Galactic"];
     themes.forEach(theme => {
         const option = document.createElement("option");
         option.value = theme.toLowerCase();
@@ -204,10 +232,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         switch (theme) {
             case "dark":
-                themeLink.href = "dark.css";
+                themeLink.href = "app/css/dark.css";
+                break;
+            case "galactic":
+                themeLink.href = "app/css/galaxy.css";
                 break;
             default:
-                themeLink.href = "styles.css";
+                themeLink.href = "app/css/styles.css";
                 break;
         }
     }

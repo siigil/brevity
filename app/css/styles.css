@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fdf6e3;
+    color: #586e75;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#editor {
+    width: 80%;
+    max-width: 800px;
+    min-height: 70vh;
+    padding: 20px;
+    background-color: #fff3e6;
+    border: 2px solid #b58900;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    margin: 0 200px 0 0;
+}
+
+#editor p {
+    margin: 1em 0;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+/* Adding a bit of cuteness */
+#editor:focus {
+    outline: none;
+    border-color: #d33682;
+    box-shadow: 0 0 15px rgba(211, 54, 130, 0.5);
+}
+
+/* Sidebar */
+
+#sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-color: #fdf6e3;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#theme-switcher {
+    margin-top: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: center;
+}
+
+/* Scrollbar style */
+#editor::-webkit-scrollbar {
+    width: 10px;
+}
+
+#editor::-webkit-scrollbar-thumb {
+    background: #d33682;
+    border-radius: 10px;
+}
+
+#editor::-webkit-scrollbar-thumb:hover {
+    background: #b58900;
+}
+
+/* Highlight styles */
+/* More colors here: https://coolors.co/palettes/trending */
+.highlight-adverb {
+    background-color: #D0F4DE;
+    color: #03ad44;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-passive {
+    background-color: #d2f9fd;
+    color: #0096a7;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-complex {
+    background-color: #E4C1F9;
+    color: #9900f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-hard {
+    background-color: #FCF6BD;
+    color: #a68303;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-very-hard {
+    background-color: #FF99C8;
+    color: #d30465;
+    padding: 2px 4px;
+    border-radius: 4px;
+}

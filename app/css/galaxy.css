@@ -1,0 +1,107 @@
+/* styles.css */
+body {
+    font-family: 'Georgia', serif;
+    background-image: url('../img/galaxy.jpg'); /* Replace with the actual path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    color: #ffffff; /* Ensures readability over the image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#editor {
+    width: 80%;
+    max-width: 800px;
+    min-height: 70vh;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for readability */
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    color: #ffffff;
+}
+
+#editor p {
+    margin: 1em 0;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+/* Adding a bit of cuteness */
+#editor:focus {
+    outline: none;
+    border-color: #fada8d;
+    box-shadow: 0 0 15px #feffe7;
+}
+
+/* Sidebar */
+#sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Matches the editor style */
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    font-family: Georgia, serif;
+}
+
+/* Scrollbar style */
+#editor::-webkit-scrollbar {
+    width: 10px;
+}
+
+#editor::-webkit-scrollbar-thumb {
+    background: #d33682;
+    border-radius: 10px;
+}
+
+#editor::-webkit-scrollbar-thumb:hover {
+    background: #b58900;
+}
+
+/* Highlight styles */
+/* More colors here: https://coolors.co/palettes/trending */
+.highlight-adverb {
+    background-color: #dee89b;
+    color: #859900;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-passive {
+    background-color: #b7f2ed;
+    color: #2aa198;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-complex {
+    background-color: #cacdff;
+    color: 	#6c71c4;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-hard {
+    background-color: #fceab5;
+    color: #b58900;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.highlight-very-hard {
+    background-color: #fdb3d7;
+    color: #d33682;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
