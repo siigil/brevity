@@ -1,6 +1,5 @@
 # ☕️ brevity
-A static HTML app to concentrate your words
+An offline, single-page app to improve your writing.
 
-> :alert: This app is still a little buggy!
 
 
