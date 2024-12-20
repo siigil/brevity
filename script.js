@@ -1,6 +1,18 @@
 // script.js
 document.addEventListener("DOMContentLoaded", () => {
     const editor = document.getElementById("editor");
+
+    // Load saved text
+    const savedText = localStorage.getItem("editorContent");
+    if (savedText) {
+        editor.innerHTML = savedText;
+    }
+
+    // Save text on input
+    editor.addEventListener("input", () => {
+        localStorage.setItem("editorContent", editor.innerHTML);
+    });
+    
     let sidebar = document.getElementById("sidebar");
 
     // Ensure sidebar is present
