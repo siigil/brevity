@@ -4,7 +4,7 @@ An offline, single-page app to improve your writing.
 ![Brevity](/app/img/brevity.png)
 
 ## Purpose
-Brevity is an offline web application that checks your writing for common complexity, such as:
+Brevity is an offline web application that checks your writing for complexity, such as:
 - Adverbs
 - Complex words
 - Lengthy sentences
@@ -36,6 +36,6 @@ Code is structured as follows:
 I created Brevity as a creative jaunt to see how building a personal local app with AI could go. While it's not perfect, I think it still came out nice!
 
 My writeup on this process (and why I love what it means for home cooked apps) is here:
-- [Home cooking apps with AI](https://kknowl.es/posts/key-vault-access-policies/)
+- [Home cooking apps with AI assistance](https://kknowl.es/posts/home-cooking-apps-with-ai/)
 
 Code in this repository is heavily co-authored in ChatGPT Canvas, and primarily intended as a personal editor. It may be a little sloppy.
